@@ -10,18 +10,18 @@ architecture behavior of register_tb is
     signal clk     : std_logic := '0';
     signal rst     : std_logic := '0';
     signal en      : std_logic := '0';
-    signal data_in : std_logic_vector(7 downto 0) := (others => '0');
+    signal data_in : std_logic_vector(3 downto 0) := (others => '0');
 
     -- Outputs
-    signal data_out : std_logic_vector(7 downto 0);
+    signal data_out : std_logic_vector(3 downto 0);
 
     -- Clock period definitions
-    constant clk_period : time := 2.5 ns;
+    constant clk_period : time := 10 ns;
 
 begin
 
     -- Instantiate the Unit Under Test (UUT)
-    uut: entity work.register_8bit port map (
+    uut: entity work.register_4bit port map (
           clk      => clk,
           rst      => rst,
           en       => en,

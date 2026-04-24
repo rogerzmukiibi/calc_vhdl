@@ -1,17 +1,17 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity register_8bit is
+entity register_4bit is
     port (
         clk         : in std_logic := '0';                     -- Clock signal
         rst         : in std_logic := '0';                     -- Reset signal (active high)
         en          : in std_logic := '0';                     -- Enable signal
-        data_in     : in std_logic_vector(7 downto 0) := (others => '0');  -- Data input
-        data_out    : out std_logic_vector(7 downto 0) := (others => '0')  -- Data output
+        data_in     : in std_logic_vector(3 downto 0) := (others => '0');  -- Data input
+        data_out    : out std_logic_vector(3 downto 0) := (others => '0')  -- Data output
     );
-end register_8bit;
+end register_4bit;
 
-architecture Behavioral of register_8bit is
+architecture Behavioral of register_4bit is
     begin 
         -- This process is triggered on the rising edge of the clock 
         -- when the enable signal is high and reset is not active
